@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+import IllustrationVigo from '../components/IllustrationVigo.astro';
+import IllustrationNature from '../components/IllustrationNature.astro';
+
+const posts = [
+  {
+    date: "15 avr. 2026",
+    slug: "le-dogodoro",
+    title: "Le Dogodoro",
+    excerpt: "J'ai découvert à 40 ans que j'avais un TDAH. Le Pomodoro n'a jamais marché pour moi. Mon chien, si.",
+    tag: "perso",
+    tagLabel: "TDAH & Perso"
+  },
+  {
+    date: "16 avr. 2026",
+    slug: "slope-vs-intercept",
+    title: "Slope vs Intercept",
+    excerpt: "Deux consultants. Même expérience. Même tarif. Dans 12 mois, l'écart sera abyssal. Ce n'est pas une question de talent.",
+    tag: "ia",
+    tagLabel: "IA & Authenticité"
+  },
+  {
+    date: "8 avr. 2026",
+    slug: "meta-ads-probabiliste",
+    title: "Meta Ads ne fonctionne plus avec des règles. Il parie.",
+    excerpt: "Le shift de Meta vers un système probabiliste change tout. Ce que ça veut dire pour tes campagnes.",
+    tag: "meta",
+    tagLabel: "Meta Ads"
+  },
+];
+---
+
+<Layout title="Julien Klein — Consultant Growth & Media Buyer">
+  <div style="max-width: 960px; margin: 0 auto; padding: 0 1.5rem;">
+
+    <!-- Hero -->
+    <section style="display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; padding: 4rem 0 3rem;">
+      <div>
+        <p style="font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.2rem;">
+          Consultant Growth · Media Buyer · TDAH
+        </p>
+        <h1 style="font-size: clamp(2.4rem, 5vw, 3.8rem); margin: 0 0 1.5rem; line-height: 1.1;">
+          Ce n'est pas une question de talent.<br/>
+          <em style="color: var(--accent2);">C'est une question d'infrastructure.</em>
+        </h1>
+        <p style="font-size: 1.05rem; color: var(--muted); max-width: 480px; line-height: 1.8; margin-bottom: 2rem;">
+          20 ans à builder des systèmes qui travaillent quand je ne peux pas.
+          Meta Ads, IA, TDAH. Et un chien qui me remet à l'heure toutes les heures.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="/blog" style="background: var(--text); color: var(--bg); padding: 0.7rem 1.5rem; border-radius: 999px; font-size: 0.9rem; font-weight: 500;">
+            Lire les notes →
+          </a>
+          <a href="/contact" style="border: 1px solid var(--border); padding: 0.7rem 1.5rem; border-radius: 999px; font-size: 0.9rem; color: var(--muted);">
+            Démarrer une conversation
+          </a>
+        </div>
+      </div>
+      <div style="width: 180px; opacity: 0.9;">
+        <IllustrationVigo />
+      </div>
+    </section>
+
+    <!-- Bandeau nature -->
+    <div style="margin: 0 -1.5rem; opacity: 0.6;">
+      <IllustrationNature />
+    </div>
+
+    <!-- 3 territoires -->
+    <section style="padding: 4rem 0 3rem;">
+      <p style="font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 2.5rem;">Ce sur quoi j'écris</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+        <div style="padding: 1.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 12px;">
+          <div style="font-size: 1.5rem; margin-bottom: 0.8rem;">📊</div>
+          <h3 style="font-size: 1rem; margin: 0 0 0.5rem;">Meta Ads & Growth</h3>
+          <p style="font-size: 0.85rem; color: var(--muted); margin: 0; line-height: 1.6;">Technique, précis, contre-intuitif. Des exemples chiffrés, pas des frameworks.</p>
+        </div>
+        <div style="padding: 1.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 12px;">
+          <div style="font-size: 1.5rem; margin-bottom: 0.8rem;">🌿</div>
+          <h3 style="font-size: 1rem; margin: 0 0 0.5rem;">IA & Authenticité</h3>
+          <p style="font-size: 0.85rem; color: var(--muted); margin: 0; line-height: 1.6;">Jamais binaire. Toujours "ça dépend". La combinaison gagne sur la substitution.</p>
+        </div>
+        <div style="padding: 1.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 12px;">
+          <div style="font-size: 1.5rem; margin-bottom: 0.8rem;">🐾</div>
+          <h3 style="font-size: 1rem; margin: 0 0 0.5rem;">Vigo, TDAH & Perso</h3>
+          <p style="font-size: 0.85rem; color: var(--muted); margin: 0; line-height: 1.6;">Vulnérable, concret, un pont vers une leçon universelle.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Derniers posts -->
+    <section style="padding: 2rem 0 4rem;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem;">
+        <p style="font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0;">Dernières notes</p>
+        <a href="/blog" style="font-size: 0.85rem; color: var(--muted);">Tout voir →</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0;">
+        {posts.map((post, i) => (
+          <a href={`/blog/${post.slug}`} style={`display: block; padding: 1.5rem 0; border-top: 1px solid var(--border); ${i === posts.length - 1 ? 'border-bottom: 1px solid var(--border);' : ''}`}>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.4rem;">
+                  <span class={`tag ${post.tag}`}>{post.tagLabel}</span>
+                  <span style="font-size: 0.8rem; color: var(--muted);">{post.date}</span>
+                </div>
+                <h3 style="font-size: 1.05rem; margin: 0 0 0.4rem; font-family: 'Playfair Display', serif;">{post.title}</h3>
+                <p style="font-size: 0.88rem; color: var(--muted); margin: 0; line-height: 1.6;">{post.excerpt}</p>
+              </div>
+              <span style="color: var(--muted); font-size: 1.2rem; flex-shrink: 0;">→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section style="background: var(--bg-warm); border: 1px solid var(--border); border-radius: 16px; padding: 3rem; margin-bottom: 4rem; text-align: center;">
+      <p style="font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;">Newsletter</p>
+      <h2 style="font-size: 1.8rem; margin: 0 0 1rem;">Vigo en Ville</h2>
+      <p style="color: var(--muted); max-width: 400px; margin: 0 auto 2rem; font-size: 0.95rem; line-height: 1.7;">
+        Ce que j'apprends, teste et observe. Un vendredi sur deux.
+        Pas de tips génériques — mes vrais systèmes.
+      </p>
+      <a href="mailto:julienklein20@gmail.com?subject=Inscription Vigo en Ville" style="background: var(--text); color: var(--bg); padding: 0.8rem 2rem; border-radius: 999px; font-size: 0.9rem; font-weight: 500; display: inline-block;">
+        S'inscrire →
+      </a>
+    </section>
+
+  </div>
+</Layout>

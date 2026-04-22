@@ -1,0 +1,42 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title = "Julien Klein", description = "Consultant Growth & Media Buyer. TDAH, IA, et un chien qui me remet à l'heure." } = Astro.props;
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body>
+    <nav style="max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+      <a href="/" style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600;">Julien Klein</a>
+      <div style="display: flex; gap: 2rem; font-size: 0.9rem; color: var(--muted);">
+        <a href="/blog">Notes</a>
+        <a href="/parcours">Méthode</a>
+        <a href="/ressources">Ressources</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </nav>
+    <main>
+      <slot />
+    </main>
+    <footer style="max-width: 960px; margin: 6rem auto 0; padding: 2rem 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--muted);">
+      <span>Julien Klein · 2026</span>
+      <div style="display: flex; gap: 1.5rem;">
+        <a href="https://linkedin.com/in/julienklein" target="_blank">LinkedIn</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </footer>
+  </body>
+</html>

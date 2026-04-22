@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const posts = [
+  { date: "15 avr. 2026", slug: "le-dogodoro", title: "Le Dogodoro", excerpt: "J'ai découvert à 40 ans que j'avais un TDAH. Le Pomodoro n'a jamais marché pour moi. Mon chien, si.", tag: "perso", tagLabel: "TDAH & Perso", readTime: "3 min" },
+  { date: "16 avr. 2026", slug: "slope-vs-intercept", title: "Slope vs Intercept", excerpt: "Deux consultants. Même expérience. Même tarif. Dans 12 mois, l'écart sera abyssal.", tag: "ia", tagLabel: "IA & Authenticité", readTime: "4 min" },
+  { date: "8 avr. 2026", slug: "meta-ads-probabiliste", title: "Meta Ads ne fonctionne plus avec des règles. Il parie.", excerpt: "Le shift de Meta vers un système probabiliste change tout pour tes campagnes.", tag: "meta", tagLabel: "Meta Ads", readTime: "5 min" },
+  { date: "6 avr. 2026", slug: "tdah-et-ia", title: "TDAH et IA — le cerveau augmenté ou délégué ?", excerpt: "L'IA ne guérit pas le TDAH. Elle change juste quel muscle tu dois entraîner.", tag: "ia", tagLabel: "IA & Authenticité", readTime: "4 min" },
+  { date: "24 mars 2026", slug: "vigo-laisse-energie", title: "Vigo m'a appris à tenir une laisse, pas à prendre le contrôle", excerpt: "La différence entre guider et contrôler. Une leçon venue d'un golden retriever.", tag: "perso", tagLabel: "TDAH & Perso", readTime: "3 min" },
+  { date: "5 mars 2026", slug: "authenticite-avantage-strategique", title: "L'authenticité comme avantage stratégique", excerpt: "Ce n'est pas une reconversion. C'est un upgrade délibéré.", tag: "ia", tagLabel: "IA & Authenticité", readTime: "4 min" },
+];
+---
+
+<Layout title="Notes — Julien Klein" description="Retours terrain sur Meta Ads, IA, TDAH et freelance.">
+  <div style="max-width: 720px; margin: 0 auto; padding: 0 1.5rem;">
+    <section style="padding: 4rem 0 3rem;">
+      <p style="font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;">Notes & observations</p>
+      <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 1rem;">Ce que j'apprends<br/><em style="color: var(--accent2);">en le vivant.</em></h1>
+      <p style="color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 480px;">Observations terrain sur Meta Ads, IA, TDAH et la vie de freelance. Toujours depuis une expérience réelle.</p>
+    </section>
+    <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2.5rem;">
+      <span class="tag">Tous</span>
+      <span class="tag meta">Meta Ads</span>
+      <span class="tag ia">IA & Authenticité</span>
+      <span class="tag perso">TDAH & Perso</span>
+    </div>
+    <div>
+      {posts.map((post, i) => (
+        <a href={`/blog/${post.slug}`} style={`display: block; padding: 1.8rem 0; border-top: 1px solid var(--border); ${i === posts.length - 1 ? 'border-bottom: 1px solid var(--border);' : ''}`}>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+            <div style="flex: 1;">
+              <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem;">
+                <span class={`tag ${post.tag}`}>{post.tagLabel}</span>
+                <span style="font-size: 0.78rem; color: var(--muted);">{post.date} · {post.readTime}</span>
+              </div>
+              <h2 style="font-size: 1.1rem; margin: 0 0 0.5rem; font-family: 'Playfair Display', serif; font-weight: 600;">{post.title}</h2>
+              <p style="font-size: 0.88rem; color: var(--muted); margin: 0; line-height: 1.65;">{post.excerpt}</p>
+            </div>
+            <span style="color: var(--muted); font-size: 1.2rem; margin-top: 0.2rem; flex-shrink: 0;">→</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>

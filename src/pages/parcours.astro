@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const phases = [
+  {
+    num: 1,
+    title: "Comprendre son cerveau",
+    desc: "TDAH, hyperfocus, dette cognitive. Avant les outils, comprendre comment tu fonctionnes vraiment.",
+    articles: [
+      { slug: "tdah-et-ia", title: "TDAH et IA — le cerveau augmenté ou délégué ?", done: true },
+      { slug: "le-dogodoro", title: "Le Dogodoro", done: true },
+      { slug: "vigo-laisse-energie", title: "Vigo m'a appris à tenir une laisse, pas à prendre le contrôle", done: true },
+    ]
+  },
+  {
+    num: 2,
+    title: "Builder ses systèmes",
+    desc: "Second Brain, capture, workflows. Des infrastructures qui travaillent quand tu ne peux pas.",
+    articles: [
+      { slug: "authenticite-avantage-strategique", title: "L'authenticité comme avantage stratégique", done: true },
+      { slug: "slope-vs-intercept", title: "Slope vs Intercept", done: true },
+      { slug: "second-brain", title: "Mon Second Brain après 2 ans", done: false },
+    ]
+  },
+  {
+    num: 3,
+    title: "Maîtriser Meta Ads",
+    desc: "Le vrai fonctionnement de l'algo. Pas des règles — des paris éclairés.",
+    articles: [
+      { slug: "meta-ads-probabiliste", title: "Meta Ads ne fonctionne plus avec des règles. Il parie.", done: true },
+      { slug: "ugc-algo-engineering", title: "UGC : Algo Engineering, pas Authenticité", done: true },
+      { slug: "budget-learning-phase", title: "Budget et learning phase — ce que personne ne dit", done: false },
+    ]
+  },
+  {
+    num: 4,
+    title: "IA & Authenticité",
+    desc: "Comment l'IA amplifie sans remplacer. La combinaison gagne toujours sur la substitution.",
+    articles: [
+      { slug: "ia-humain-division-travail", title: "IA vs Humain — Division du travail", done: true },
+      { slug: "ia-sureel-humain-authentique", title: "IA surréel vs Humain authentique", done: true },
+      { slug: "vibe-coding-nocode", title: "Vibe Coding vs NoCode", done: true },
+    ]
+  },
+];
+---
+
+<Layout title="Méthode — Julien Klein" description="Ma méthode en 4 phases : TDAH, systèmes, Meta Ads, IA.">
+  <div style="max-width: 720px; margin: 0 auto; padding: 0 1.5rem;">
+
+    <section style="padding: 4rem 0 3rem;">
+      <p style="font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;">Ma méthode</p>
+      <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 1rem;">4 phases.<br/><em style="color: var(--accent);">Un seul fil directeur.</em></h1>
+      <p style="color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 520px;">
+        Ce n'est pas une question de talent. C'est une question d'infrastructure.
+        Ce parcours documente comment j'ai construit la mienne — avec un cerveau TDAH, des outils IA, et un chien comme coach.
+      </p>
+    </section>
+
+    <div style="display: flex; flex-direction: column; gap: 3rem; padding-bottom: 5rem;">
+      {phases.map(phase => (
+        <div>
+          <div style="display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1rem;">
+            <span style="font-size: 0.75rem; font-weight: 500; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--accent); padding: 0.2rem 0.6rem; border-radius: 999px;">Phase {phase.num}</span>
+            <h2 style="font-size: 1.3rem; margin: 0; font-family: 'Playfair Display', serif;">{phase.title}</h2>
+          </div>
+          <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.7; margin: 0 0 1.2rem; max-width: 480px;">{phase.desc}</p>
+          <div style="display: flex; flex-direction: column; gap: 0;">
+            {phase.articles.map((article, i) => (
+              <div style={`display: flex; align-items: center; gap: 1rem; padding: 0.9rem 0; border-top: 1px solid var(--border); ${i === phase.articles.length - 1 ? 'border-bottom: 1px solid var(--border);' : ''}`}>
+                <span style={`width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; background: ${article.done ? 'var(--accent)' : 'var(--border)'};`}></span>
+                {article.done
+                  ? <a href={`/blog/${article.slug}`} style="font-size: 0.9rem; flex: 1;">{article.title}</a>
+                  : <span style="font-size: 0.9rem; color: var(--muted); flex: 1;">{article.title}</span>
+                }
+                {!article.done && <span style="font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em;">Bientôt</span>}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</Layout>

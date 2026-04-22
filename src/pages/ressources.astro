@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = [
+  {
+    id: "skills",
+    title: "Skills Claude Code",
+    desc: "Mes commandes slash — workflows réutilisables.",
+    color: "var(--accent)",
+    items: [
+      { name: "/post-linkedin", desc: "Génère un post LinkedIn dans mon style" },
+      { name: "/score-linkedin", desc: "Panel de 5 experts avant publication" },
+      { name: "/capture", desc: "Range une idée dans le bon endroit" },
+      { name: "/ingest", desc: "Ingère une ressource dans le Second Brain" },
+      { name: "/angle", desc: "Trouve des angles éditoriaux forts" },
+      { name: "/write", desc: "Mail, Slack, pitch — avec filtre anti-slop" },
+    ]
+  },
+  {
+    id: "mcp",
+    title: "Serveurs MCP",
+    desc: "Les connecteurs qui relient Claude à mes outils.",
+    color: "var(--accent2)",
+    items: [
+      { name: "Firecrawl", desc: "Scraping web — Notion, articles, sites" },
+      { name: "Slack", desc: "Lire et poster dans mes channels" },
+      { name: "Figma", desc: "Accès aux designs et composants" },
+      { name: "Google Drive", desc: "Lecture et création de fichiers" },
+      { name: "Notion", desc: "Accès à mes bases de données" },
+      { name: "Make", desc: "Déclenchement de scénarios d'automatisation" },
+    ]
+  },
+  {
+    id: "outils",
+    title: "Outils du quotidien",
+    desc: "Les apps qui font tourner mon système.",
+    color: "#7A5C8B",
+    items: [
+      { name: "Obsidian", desc: "Second Brain — notes, garden, projets" },
+      { name: "LeadGravity", desc: "Automation LinkedIn — DMs, leads" },
+      { name: "Claude Code", desc: "Mon IDE IA principal" },
+      { name: "Meta Ads Manager", desc: "Gestion campagnes Meta" },
+      { name: "Notion", desc: "Bases de données clients et projets" },
+      { name: "Telegram", desc: "Bot de capture d'idées" },
+    ]
+  },
+];
+---
+
+<Layout title="Ressources — Julien Klein" description="Mes Skills Claude Code, serveurs MCP et outils du quotidien.">
+  <div style="max-width: 960px; margin: 0 auto; padding: 0 1.5rem;">
+
+    <section style="padding: 4rem 0 3rem;">
+      <p style="font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;">Ma boîte à outils</p>
+      <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 1rem;">Ce qui fait tourner<br/><em style="color: var(--accent2);">le système.</em></h1>
+      <p style="color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 480px;">
+        Pas de software sans usage concret. Chaque outil ici a survécu 6 mois de test quotidien.
+      </p>
+    </section>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; padding-bottom: 5rem;">
+      {categories.map(cat => (
+        <div>
+          <div style={`width: 32px; height: 4px; background: ${cat.color}; border-radius: 2px; margin-bottom: 1rem;`}></div>
+          <h2 style="font-size: 1rem; margin: 0 0 0.4rem; font-family: 'Playfair Display', serif;">{cat.title}</h2>
+          <p style="font-size: 0.82rem; color: var(--muted); margin: 0 0 1.5rem; line-height: 1.5;">{cat.desc}</p>
+          <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+            {cat.items.map(item => (
+              <div style="padding: 0.9rem 1rem; background: var(--card); border: 1px solid var(--border); border-radius: 8px;">
+                <div style="font-size: 0.85rem; font-weight: 500; margin-bottom: 0.2rem; font-family: monospace;">{item.name}</div>
+                <div style="font-size: 0.78rem; color: var(--muted); line-height: 1.4;">{item.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</Layout>

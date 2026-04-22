@@ -5,25 +5,25 @@ const cases = [
   {
     slug: "franklin",
     client: "Franklin",
+    logo: "/logo-franklin.png",
     tag: "E-commerce",
     headline: "Scale paid avec la data comme colonne vertébrale",
-    excerpt: "60K → 200K€/mois de budget géré. CAC passé de 70 à 50€ en maintenant les perfs à chaque palier.",
     metrics: ["60K → 200K€/mois", "CAC −28%", "Server-side Meta"],
   },
   {
     slug: "les-sherpas",
     client: "Les Sherpas",
+    logo: "/logo-sherpas.png",
     tag: "EdTech",
     headline: "Reconstruire une stack from scratch avant de toucher les budgets",
-    excerpt: "Arrivé sans tracking fiable, sans dashboard, sans vision funnel. Reconstruction complète avant d'optimiser les campagnes.",
     metrics: ["200–250K€/mois", "GTM + Segment + Data Warehouse", "CAC en baisse"],
   },
   {
     slug: "chance",
     client: "Chance",
+    logo: null,
     tag: "B2C / Lead gen",
     headline: "Funnel éducatif sur une catégorie où les gens ne savent pas qu'ils ont le problème",
-    excerpt: "Quiz TOFU qui éduque avant de convertir. Meta ne voyait pas les vraies conversions — on a fermé la boucle avec Hightouch.",
     metrics: ["200K€/mois", "Quiz Meta → Calendly → Sales", "Hightouch + API Conversions"],
   },
 ];
@@ -44,10 +44,13 @@ const cases = [
       <div style="display: flex; flex-direction: column; gap: 0;">
         {cases.map((c, i) => (
           <a href={`/usecases/${c.slug}`} style={`display: block; padding: 2rem 0; border-top: 1px solid #D4C9B5; ${i === cases.length - 1 ? 'border-bottom: 1px solid #D4C9B5;' : ''} color: #2C2416; text-decoration: none;`}>
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 2rem;">
               <div style="flex: 1;">
-                <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.6rem;">
-                  <span style="font-size: 1rem; font-weight: 600; font-family: 'Playfair Display', serif;">{c.client}</span>
+                <div style="display: flex; align-items: center; gap: 1.2rem; margin-bottom: 0.8rem;">
+                  {c.logo
+                    ? <img src={c.logo} alt={c.client} style="height: 28px; width: auto; object-fit: contain;" />
+                    : <span style="font-size: 1rem; font-weight: 600; font-family: 'Playfair Display', serif;">{c.client}</span>
+                  }
                   <span style="font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border: 1px solid #D4C9B5; border-radius: 999px; color: #8B7355;">{c.tag}</span>
                 </div>
                 <p style="font-size: 0.95rem; color: #8B7355; margin: 0 0 1rem; line-height: 1.6;">{c.headline}</p>
@@ -57,7 +60,7 @@ const cases = [
                   ))}
                 </div>
               </div>
-              <span style="color: #8B7355; flex-shrink: 0; font-size: 1.1rem; margin-top: 0.2rem;">→</span>
+              <span style="color: #8B7355; flex-shrink: 0; font-size: 1.1rem;">→</span>
             </div>
           </a>
         ))}

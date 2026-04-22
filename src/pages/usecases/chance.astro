@@ -1,0 +1,63 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Chance — Julien Klein" description="Funnel quiz TOFU sur une catégorie éducative. 200K€/mois géré.">
+  <div style="max-width: 680px; margin: 0 auto; padding: 0 1.5rem;">
+    <div style="padding: 3rem 0 1rem;">
+      <a href="/usecases" style="font-size: 0.85rem; color: #8B7355;">← Missions</a>
+    </div>
+
+    <div style="margin-bottom: 0.5rem;">
+      <span style="font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border: 1px solid #D4C9B5; border-radius: 999px; color: #8B7355;">B2C / Lead gen</span>
+    </div>
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0.5rem 0 0.5rem; color: #2C2416;">Chance</h1>
+    <p style="font-size: 1.05rem; color: #8B7355; line-height: 1.8; margin-bottom: 2.5rem;">Les gens ne savaient pas forcément qu'ils avaient le problème. On a construit un funnel quiz TOFU qui éduque avant de convertir — et fermé la boucle CRM vers Meta pour que l'algo voie les vraies conversions.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem;">
+      {[
+        ["Budget", "200K€/mois"],
+        ["Funnel", "Quiz → Calendly → Sales"],
+        ["Stack", "Hightouch + API Conv."],
+      ].map(([label, value]) => (
+        <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+          <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.4rem;">{label}</div>
+          <div style="font-size: 0.9rem; font-weight: 500; color: #2C2416;">{value}</div>
+        </div>
+      ))}
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Le contexte</h2>
+    <p style="font-size: 0.92rem; color: #8B7355; line-height: 1.8; margin-bottom: 2rem;">Chance est un service d'accompagnement à la reconversion professionnelle. Le problème : la plupart des gens qui en ont besoin ne cherchent pas "reconversion professionnelle" sur Google — ils ne savent pas encore que c'est leur problème. Et le cycle entre premier contact et vente dure plusieurs semaines. Meta ne voyait donc jamais les vraies conversions.</p>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Ce qu'on a fait</h2>
+    <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 2.5rem;">
+      {[
+        ["Quiz diagnostic TOFU", "Pub Meta → landing quiz (\"Êtes-vous fait pour la reconversion ?\") → résultat personnalisé → Calendly. Le quiz éduque, qualifie et convertit en une seule séquence."],
+        ["Fermer la boucle avec Hightouch", "Les statuts CRM (SQL, vente signée) remontés vers l'API Conversions Meta via Hightouch. Meta optimise enfin sur les vrais acheteurs, pas sur les curieux."],
+        ["Stack data complète", "GTM + Segment + data warehouse + Hightouch. Chaque étape du parcours visible, du clic pub à la vente."],
+        ["CAC en baisse progressive", "Une fois que Meta voit les vraies conversions, l'algo trouve des profils similaires aux acheteurs réels. Le CAC baisse mécaniquement sans toucher à la créa ni aux audiences."],
+      ].map(([titre, desc], i) => (
+        <div style="display: flex; gap: 1rem; padding: 1rem 0; border-top: 1px solid #D4C9B5;">
+          <span style="font-size: 0.72rem; color: #8B7355; font-family: monospace; flex-shrink: 0; padding-top: 0.15rem;">{String(i+1).padStart(2,'0')}</span>
+          <div>
+            <div style="font-size: 0.9rem; font-weight: 500; color: #2C2416; margin-bottom: 0.3rem;">{titre}</div>
+            <div style="font-size: 0.87rem; color: #8B7355; line-height: 1.6;">{desc}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div style="padding: 1.5rem; background: #EDE7D9; border-radius: 12px; margin-bottom: 3rem;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em;">Ce que ça a appris</div>
+      <p style="font-size: 0.92rem; color: #2C2416; line-height: 1.7; margin: 0;">Sur les cycles de vente longs, Meta optimise sur ce qu'on lui montre. Si on lui montre des leads froids, il trouve des leads froids. Lui montrer les ventes signées change complètement le profil des gens qu'il va chercher.</p>
+    </div>
+
+    <div style="padding-bottom: 5rem;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 1rem;">Autres missions</div>
+      <div style="display: flex; gap: 1rem;">
+        <a href="/usecases/franklin" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">Franklin →</a>
+        <a href="/usecases/les-sherpas" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">Les Sherpas →</a>
+      </div>
+    </div>
+  </div>
+</Layout>

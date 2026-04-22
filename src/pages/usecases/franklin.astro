@@ -1,0 +1,64 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Franklin — Julien Klein" description="Scale paid 60K → 200K€/mois, CAC −28%.">
+  <div style="max-width: 680px; margin: 0 auto; padding: 0 1.5rem;">
+    <div style="padding: 3rem 0 1rem;">
+      <a href="/usecases" style="font-size: 0.85rem; color: #8B7355;">← Missions</a>
+    </div>
+
+    <div style="margin-bottom: 0.5rem;">
+      <span style="font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border: 1px solid #D4C9B5; border-radius: 999px; color: #8B7355;">E-commerce</span>
+    </div>
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0.5rem 0 0.5rem; color: #2C2416;">Franklin</h1>
+    <p style="font-size: 1.05rem; color: #8B7355; line-height: 1.8; margin-bottom: 2.5rem;">Scale paid avec la data comme colonne vertébrale. 60K → 200K€/mois en faisant baisser le CAC de 70 à 50€. Ce qui a rendu ça possible : des données fiables avant de toucher les budgets.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem;">
+      {[
+        ["Budget", "60K → 200K€/mois"],
+        ["CAC", "70€ → 50€ (−28%)"],
+        ["Stack", "Server-side + Motion + Polar"],
+      ].map(([label, value]) => (
+        <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+          <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.4rem;">{label}</div>
+          <div style="font-size: 0.9rem; font-weight: 500; color: #2C2416;">{value}</div>
+        </div>
+      ))}
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Le contexte</h2>
+    <p style="font-size: 0.92rem; color: #8B7355; line-height: 1.8; margin-bottom: 2rem;">Franklin arrive avec un budget paid qui performe à 60K€/mois mais sans visibilité claire sur ce qui génère réellement les conversions. Avant de scaler, il fallait s'assurer que la data était fiable — sinon on scale dans le vide.</p>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Ce qu'on a fait</h2>
+    <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 2.5rem;">
+      {[
+        ["Server-side Meta", "Tracking navigateur → tracking server-side pour récupérer les événements perdus sur iOS et avec adblockers. Le signal envoyé à Meta est devenu fiable."],
+        ["Process créatif", "Refonte de la relation avec l'agence UGC. Analyse créative via Motion pour identifier les patterns qui convertissent. Vélocité de production x3."],
+        ["Dashboard cross-canal", "Polar pour avoir une vision unifiée Meta + Google + CRM. Plus de décisions au doigt mouillé."],
+        ["Scale progressif", "+10/15% de budget par mois, pas de coup d'accélérateur brutal. Chaque palier validé avant le suivant."],
+        ["Planning annuel", "Identification des temps forts avec coordination CRM / Ads — les campagnes email et paid parlent le même langage au même moment."],
+      ].map(([titre, desc], i) => (
+        <div style="display: flex; gap: 1rem; padding: 1rem 0; border-top: 1px solid #D4C9B5;">
+          <span style="font-size: 0.72rem; color: #8B7355; font-family: monospace; flex-shrink: 0; padding-top: 0.15rem;">{String(i+1).padStart(2,'0')}</span>
+          <div>
+            <div style="font-size: 0.9rem; font-weight: 500; color: #2C2416; margin-bottom: 0.3rem;">{titre}</div>
+            <div style="font-size: 0.87rem; color: #8B7355; line-height: 1.6;">{desc}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div style="padding: 1.5rem; background: #EDE7D9; border-radius: 12px; margin-bottom: 3rem;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em;">Ce que ça a appris</div>
+      <p style="font-size: 0.92rem; color: #2C2416; line-height: 1.7; margin: 0;">On ne scale pas un budget sans savoir exactement ce qui fonctionne et pourquoi. Le server-side n'est pas une optimisation — c'est le prérequis. Sans lui, Meta optimise sur du signal bruité et le CAC dérive.</p>
+    </div>
+
+    <div style="padding-bottom: 5rem;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 1rem;">Autres missions</div>
+      <div style="display: flex; gap: 1rem;">
+        <a href="/usecases/les-sherpas" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">Les Sherpas →</a>
+        <a href="/usecases/chance" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">Chance →</a>
+      </div>
+    </div>
+  </div>
+</Layout>

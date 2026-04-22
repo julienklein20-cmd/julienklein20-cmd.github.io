@@ -1,0 +1,64 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Les Sherpas — Julien Klein" description="Reconstruction stack data from scratch. 200–250K€/mois géré.">
+  <div style="max-width: 680px; margin: 0 auto; padding: 0 1.5rem;">
+    <div style="padding: 3rem 0 1rem;">
+      <a href="/usecases" style="font-size: 0.85rem; color: #8B7355;">← Missions</a>
+    </div>
+
+    <div style="margin-bottom: 0.5rem;">
+      <span style="font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border: 1px solid #D4C9B5; border-radius: 999px; color: #8B7355;">EdTech</span>
+    </div>
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0.5rem 0 0.5rem; color: #2C2416;">Les Sherpas</h1>
+    <p style="font-size: 1.05rem; color: #8B7355; line-height: 1.8; margin-bottom: 2.5rem;">Arrivé sans tracking fiable, sans dashboard, sans vision funnel. Tout reconstruit avant de toucher aux campagnes. C'est dans cet ordre qu'on a fait baisser le CAC significativement.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem;">
+      {[
+        ["Budget", "200–250K€/mois"],
+        ["Stack", "GTM + Segment + DWH"],
+        ["CRM", "Nurturing + Retargeting"],
+      ].map(([label, value]) => (
+        <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+          <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.4rem;">{label}</div>
+          <div style="font-size: 0.9rem; font-weight: 500; color: #2C2416;">{value}</div>
+        </div>
+      ))}
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Le contexte</h2>
+    <p style="font-size: 0.92rem; color: #8B7355; line-height: 1.8; margin-bottom: 2rem;">Les Sherpas est une plateforme de soutien scolaire. À mon arrivée : des événements mal configurés dans GTM, pas de data warehouse, des campagnes pilotées sur des métriques partielles. Impossible de savoir quel canal générais vraiment des inscrits payants.</p>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Ce qu'on a fait</h2>
+    <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 2.5rem;">
+      {[
+        ["Audit de la stack", "Cartographie de tous les événements trackés, identification des trous. La moitié des conversions n'étaient pas remontées correctement."],
+        ["Reconstruction GTM + Segment", "Refonte complète du plan de taggage. Chaque étape du funnel visible — de la visite à l'achat du premier cours."],
+        ["Data warehouse", "Centralisation de toutes les sources (ads, CRM, paiements) dans un data warehouse. Premier dashboard fiable de l'histoire de la boîte."],
+        ["Refonte du funnel", "Nouvelles pages Webflow alignées sur les intentions de recherche. Taux de conversion des landing pages +40%."],
+        ["CRM + Retargeting", "Mise en place de séquences de nurturing selon le stade dans le funnel. Relances ads coordonnées avec les emails — même message, même timing."],
+      ].map(([titre, desc], i) => (
+        <div style="display: flex; gap: 1rem; padding: 1rem 0; border-top: 1px solid #D4C9B5;">
+          <span style="font-size: 0.72rem; color: #8B7355; font-family: monospace; flex-shrink: 0; padding-top: 0.15rem;">{String(i+1).padStart(2,'0')}</span>
+          <div>
+            <div style="font-size: 0.9rem; font-weight: 500; color: #2C2416; margin-bottom: 0.3rem;">{titre}</div>
+            <div style="font-size: 0.87rem; color: #8B7355; line-height: 1.6;">{desc}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div style="padding: 1.5rem; background: #EDE7D9; border-radius: 12px; margin-bottom: 3rem;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em;">Ce que ça a appris</div>
+      <p style="font-size: 0.92rem; color: #2C2416; line-height: 1.7; margin: 0;">Quand la stack n'est pas fiable, optimiser les campagnes c'est du bruit. Le temps passé à reconstruire la mesure avant de toucher les budgets est toujours rentabilisé plus vite qu'on ne le pense.</p>
+    </div>
+
+    <div style="padding-bottom: 5rem;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 1rem;">Autres missions</div>
+      <div style="display: flex; gap: 1rem;">
+        <a href="/usecases/franklin" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">Franklin →</a>
+        <a href="/usecases/chance" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">Chance →</a>
+      </div>
+    </div>
+  </div>
+</Layout>

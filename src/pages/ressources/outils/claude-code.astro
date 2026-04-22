@@ -1,0 +1,51 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Claude Code — Julien Klein">
+  <div style="max-width: 680px; margin: 0 auto; padding: 0 1.5rem;">
+    <div style="padding: 3rem 0 1rem;">
+      <a href="/ressources" style="font-size: 0.85rem; color: #8B7355;">← Ressources</a>
+    </div>
+    <div style="margin-bottom: 0.5rem;"><span style="font-family: monospace; font-size: 0.8rem; color: #7A5C8B; border: 1px solid #7A5C8B; padding: 0.2rem 0.6rem; border-radius: 999px;">Outil</span> <span style="font-family: monospace; font-size: 0.8rem; color: #8B7355; border: 1px solid #D4C9B5; padding: 0.2rem 0.6rem; border-radius: 999px;">IA</span></div>
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0.5rem 0 1rem; color: #2C2416;">Claude Code</h1>
+    <p style="font-size: 1.05rem; color: #8B7355; line-height: 1.8; margin-bottom: 2.5rem;">CLI IA d'Anthropic qui tourne dans le terminal et dans VSCode. Claude Code lit tout mon Second Brain, exécute les Skills, connecte les MCP, et garde une mémoire persistante entre les sessions. C'est l'infrastructure centrale du système.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Pourquoi Claude Code</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Accès direct aux fichiers locaux, exécution de commandes, mémoire persistante, Skills (slash commands), MCP — tout dans un seul outil.</div>
+      </div>
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">vs Claude.ai</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Claude.ai = chat web. Claude Code = agent dans ton environnement. Il voit tes fichiers, exécute du code, se souvient de tout.</div>
+      </div>
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Ce que ça change concrètement</h2>
+    <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 2.5rem;">
+      {[
+        ["Skills (slash commands)", "Des workflows réutilisables déclenchés par /commande. /post-linkedin, /capture, /ingest — tout est dans le Second Brain."],
+        ["MCP (Model Context Protocol)", "Connecteurs qui relient Claude à des outils externes : Firecrawl, Notion, Slack, Figma, n8n. Claude agit dans ces apps directement."],
+        ["Mémoire persistante", "Un système de fichiers mémoire qui persiste entre les sessions. Claude se souvient de mon style, mes préférences, mes clients."],
+        ["Accès au vault Obsidian", "Le Second Brain entier est lisible et éditable. /angle scanne toutes mes notes pour trouver les connexions."],
+        ["CLAUDE.md", "Un fichier d'instructions globales lu à chaque session — filtre anti-slop, règles de voix, comportements à éviter."],
+      ].map(([titre, desc], i) => (
+        <div style="display: flex; gap: 1rem; padding: 1rem 0; border-top: 1px solid #D4C9B5;">
+          <span style="font-size: 0.72rem; color: #8B7355; font-family: monospace; flex-shrink: 0; padding-top: 0.15rem;">{String(i+1).padStart(2,'0')}</span>
+          <div>
+            <div style="font-size: 0.9rem; font-weight: 500; color: #2C2416; margin-bottom: 0.3rem;">{titre}</div>
+            <div style="font-size: 0.87rem; color: #8B7355; line-height: 1.6;">{desc}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div style="margin-top: 3rem; padding-bottom: 5rem;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 1rem;">Outils liés</div>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="/ressources/outils/vscode" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">VSCode →</a>
+        <a href="/ressources/outils/obsidian" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">Obsidian →</a>
+      </div>
+    </div>
+  </div>
+</Layout>

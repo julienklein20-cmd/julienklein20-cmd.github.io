@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const cases = [
+  {
+    slug: "franklin",
+    client: "Franklin",
+    tag: "E-commerce",
+    headline: "Scale paid avec la data comme colonne vertébrale",
+    excerpt: "60K → 200K€/mois de budget géré. CAC passé de 70 à 50€ en maintenant les perfs à chaque palier.",
+    metrics: ["60K → 200K€/mois", "CAC −28%", "Server-side Meta"],
+  },
+  {
+    slug: "les-sherpas",
+    client: "Les Sherpas",
+    tag: "EdTech",
+    headline: "Reconstruire une stack from scratch avant de toucher les budgets",
+    excerpt: "Arrivé sans tracking fiable, sans dashboard, sans vision funnel. Reconstruction complète avant d'optimiser les campagnes.",
+    metrics: ["200–250K€/mois", "GTM + Segment + Data Warehouse", "CAC en baisse"],
+  },
+  {
+    slug: "chance",
+    client: "Chance",
+    tag: "B2C / Lead gen",
+    headline: "Funnel éducatif sur une catégorie où les gens ne savent pas qu'ils ont le problème",
+    excerpt: "Quiz TOFU qui éduque avant de convertir. Meta ne voyait pas les vraies conversions — on a fermé la boucle avec Hightouch.",
+    metrics: ["200K€/mois", "Quiz Meta → Calendly → Sales", "Hightouch + API Conversions"],
+  },
+];
+---
+
+<Layout title="Use Cases — Julien Klein" description="Missions Growth : Franklin, Les Sherpas, Chance.">
+  <div style="max-width: 960px; margin: 0 auto; padding: 0 1.5rem;">
+
+    <section style="padding: 4rem 0 3rem; max-width: 640px;">
+      <p style="font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: #8B7355; margin-bottom: 1rem;">Missions</p>
+      <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 1rem; font-family: 'Playfair Display', serif; color: #2C2416;">Ce que ça donne<br/><em style="color: #A85C3A;">en conditions réelles.</em></h1>
+      <p style="color: #8B7355; font-size: 1rem; line-height: 1.7; max-width: 480px;">
+        Trois missions, trois contextes différents. Paid media, stack data, funnel — ce qui a marché et pourquoi.
+      </p>
+    </section>
+
+    <section style="padding-bottom: 6rem;">
+      <div style="display: flex; flex-direction: column; gap: 0;">
+        {cases.map((c, i) => (
+          <a href={`/usecases/${c.slug}`} style={`display: block; padding: 2rem 0; border-top: 1px solid #D4C9B5; ${i === cases.length - 1 ? 'border-bottom: 1px solid #D4C9B5;' : ''} color: #2C2416; text-decoration: none;`}>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem;">
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.6rem;">
+                  <span style="font-size: 1rem; font-weight: 600; font-family: 'Playfair Display', serif;">{c.client}</span>
+                  <span style="font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border: 1px solid #D4C9B5; border-radius: 999px; color: #8B7355;">{c.tag}</span>
+                </div>
+                <p style="font-size: 0.95rem; color: #8B7355; margin: 0 0 1rem; line-height: 1.6;">{c.headline}</p>
+                <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                  {c.metrics.map(m => (
+                    <span style="font-size: 0.78rem; font-family: monospace; background: #EDE7D9; padding: 0.25rem 0.6rem; border-radius: 4px; color: #5C7A4E;">{m}</span>
+                  ))}
+                </div>
+              </div>
+              <span style="color: #8B7355; flex-shrink: 0; font-size: 1.1rem; margin-top: 0.2rem;">→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</Layout>

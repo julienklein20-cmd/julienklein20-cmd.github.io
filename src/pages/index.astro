@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import IllustrationVigo from '../components/IllustrationVigo.astro';
-import IllustrationNature from '../components/IllustrationNature.astro';
 
 const posts = [
   {
@@ -31,43 +29,33 @@ const posts = [
 ];
 ---
 
-<Layout title="Julien Klein — Consultant Growth & Media Buyer">
+<Layout title="Julien Klein — Consultant Growth">
   <div style="max-width: 960px; margin: 0 auto; padding: 0 1.5rem;">
 
     <!-- Hero -->
-    <section style="display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; padding: 4rem 0 3rem;">
-      <div>
-        <p style="font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.2rem;">
-          Consultant Growth · TDAH · Relation chien/humain
-        </p>
-        <h1 style="font-size: clamp(2.4rem, 5vw, 3.8rem); margin: 0 0 1.5rem; line-height: 1.1;">
-          Ce n'est pas une question de talent.<br/>
-          <em style="color: var(--accent2);">C'est une question d'infrastructure.</em>
-        </h1>
-        <p style="font-size: 1.05rem; color: var(--muted); max-width: 480px; line-height: 1.8; margin-bottom: 2rem;">
-          Consultant Growth, cerveau TDAH, et un chien qui m'a appris autant sur le travail que n'importe quel livre de management.
-        </p>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="/blog" style="background: var(--text); color: var(--bg); padding: 0.7rem 1.5rem; border-radius: 999px; font-size: 0.9rem; font-weight: 500;">
-            Lire les notes →
-          </a>
-          <a href="/contact" style="border: 1px solid var(--border); padding: 0.7rem 1.5rem; border-radius: 999px; font-size: 0.9rem; color: var(--muted);">
-            Démarrer une conversation
-          </a>
-        </div>
-      </div>
-      <div style="width: 420px; flex-shrink: 0;">
-        <img src="/hero.webp" alt="Julien Klein et son chien" style="width: 100%; border-radius: 12px;" />
+    <section style="padding: 5rem 0 4rem; max-width: 680px;">
+      <p style="font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.2rem;">
+        Consultant Growth · TDAH · Relation chien/humain
+      </p>
+      <h1 style="font-size: clamp(2.4rem, 5vw, 3.8rem); margin: 0 0 1.5rem; line-height: 1.1;">
+        Ce n'est pas une question de talent.<br/>
+        <em style="color: var(--accent2);">C'est une question d'infrastructure.</em>
+      </h1>
+      <p style="font-size: 1.05rem; color: var(--muted); max-width: 480px; line-height: 1.8; margin-bottom: 2rem;">
+        Consultant Growth, cerveau TDAH, et un chien qui m'a appris autant sur le travail que n'importe quel livre de management.
+      </p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="/blog" style="background: var(--text); color: var(--bg); padding: 0.7rem 1.5rem; border-radius: 999px; font-size: 0.9rem; font-weight: 500;">
+          Lire les notes →
+        </a>
+        <a href="/contact" style="border: 1px solid var(--border); padding: 0.7rem 1.5rem; border-radius: 999px; font-size: 0.9rem; color: var(--muted);">
+          Démarrer une conversation
+        </a>
       </div>
     </section>
 
-    <!-- Bandeau nature -->
-    <div style="margin: 0 -1.5rem; opacity: 0.6;">
-      <IllustrationNature />
-    </div>
-
     <!-- 3 territoires -->
-    <section style="padding: 4rem 0 3rem;">
+    <section style="padding: 2rem 0 3rem;">
       <p style="font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 2.5rem;">Ce sur quoi j'écris</p>
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
         <div style="padding: 1.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 12px;">

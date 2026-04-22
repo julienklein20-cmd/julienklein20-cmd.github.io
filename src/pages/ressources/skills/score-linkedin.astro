@@ -1,0 +1,65 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="/score-linkedin — Julien Klein">
+  <div style="max-width: 680px; margin: 0 auto; padding: 0 1.5rem;">
+    <div style="padding: 3rem 0 1rem;">
+      <a href="/ressources" style="font-size: 0.85rem; color: #8B7355;">← Ressources</a>
+    </div>
+    <div style="margin-bottom: 0.5rem;"><span style="font-family: monospace; font-size: 0.8rem; color: #5C7A4E; border: 1px solid #5C7A4E; padding: 0.2rem 0.6rem; border-radius: 999px;">Skill</span> <span style="font-family: monospace; font-size: 0.8rem; color: #8B7355; border: 1px solid #D4C9B5; padding: 0.2rem 0.6rem; border-radius: 999px;">LinkedIn</span></div>
+    <h1 style="font-family: monospace; font-size: 1.8rem; margin: 0.5rem 0 1rem; color: #2C2416;">/score-linkedin</h1>
+    <p style="font-size: 1.05rem; color: #8B7355; line-height: 1.8; margin-bottom: 2.5rem;">Panel de 5 experts virtuels qui scorent un post LinkedIn avant publication. Chaque expert vote, argumente, et propose une correction. Le post doit atteindre 85/100 pour être validé. En dessous, une réécriture est proposée automatiquement.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Pour qui</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Quiconque veut un retour structuré avant de publier. Idéal après <code>/post-linkedin</code> ou pour scorer un post écrit manuellement.</div>
+      </div>
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Prérequis</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Un post rédigé. Coller le texte directement dans la commande ou passer un fichier.</div>
+      </div>
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Utilisation</h2>
+    <div style="background: #2C2416; color: #F5F0E8; padding: 1.2rem 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.8;">
+      <div style="color: #8B7355; margin-bottom: 0.5rem;"># Scorer le post en cours</div>
+      <div>/score-linkedin</div>
+      <br/>
+      <div style="color: #8B7355; margin-bottom: 0.5rem;"># Scorer un texte brut</div>
+      <div>/score-linkedin "Texte du post ici..."</div>
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Les 5 experts du panel</h2>
+    <div style="display: flex; flex-direction: column; gap: 0;">
+      {[
+        ["Copywriter direct response", "Accroche, rétention, CTA"],
+        ["Expert LinkedIn algo", "Format, longueur, engagement"],
+        ["Lecteur cible (pro B2B)", "Pertinence, valeur perçue"],
+        ["Filtre anti-slop", "Densité, mots creux, clichés"],
+        ["Julien Klein persona", "Cohérence voix, authenticité"]
+      ].map(([nom, role], i) => (
+        <div style="display: flex; gap: 1rem; align-items: baseline; padding: 0.8rem 0; border-top: 1px solid #D4C9B5;">
+          <span style="font-size: 0.75rem; color: #8B7355; font-family: monospace; flex-shrink: 0;">{String(i+1).padStart(2,'0')}</span>
+          <div>
+            <span style="font-size: 0.9rem; color: #2C2416; font-weight: 500;">{nom}</span>
+            <span style="font-size: 0.85rem; color: #8B7355; margin-left: 0.5rem;">— {role}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div style="margin-top: 3rem; padding: 1.5rem; background: #EDE7D9; border-radius: 12px;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 0.5rem;">⚠️ Seuil de publication</div>
+      <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Score minimum : <strong>85/100</strong>. En dessous, le Skill propose une réécriture ciblée sur les points faibles identifiés par le panel.</div>
+    </div>
+
+    <div style="margin-top: 3rem; padding-bottom: 5rem;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 1rem;">Skills liés</div>
+      <div style="display: flex; gap: 1rem;">
+        <a href="/ressources/skills/post-linkedin" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">/post-linkedin →</a>
+        <a href="/ressources/skills/angle" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">/angle →</a>
+      </div>
+    </div>
+  </div>
+</Layout>

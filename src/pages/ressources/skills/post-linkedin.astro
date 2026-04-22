@@ -1,0 +1,56 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="/post-linkedin — Julien Klein">
+  <div style="max-width: 680px; margin: 0 auto; padding: 0 1.5rem;">
+    <div style="padding: 3rem 0 1rem;">
+      <a href="/ressources" style="font-size: 0.85rem; color: #8B7355;">← Ressources</a>
+    </div>
+    <div style="margin-bottom: 0.5rem;"><span style="font-family: monospace; font-size: 0.8rem; color: #5C7A4E; border: 1px solid #5C7A4E; padding: 0.2rem 0.6rem; border-radius: 999px;">Skill</span> <span style="font-family: monospace; font-size: 0.8rem; color: #8B7355; border: 1px solid #D4C9B5; padding: 0.2rem 0.6rem; border-radius: 999px;">LinkedIn</span></div>
+    <h1 style="font-family: monospace; font-size: 1.8rem; margin: 0.5rem 0 1rem; color: #2C2416;">/post-linkedin</h1>
+    <p style="font-size: 1.05rem; color: #8B7355; line-height: 1.8; margin-bottom: 2.5rem;">Génère un post LinkedIn dans le style de Julien Klein à partir d'un angle ou d'une idée brute. Lit automatiquement <code>voice.md</code> et les 3 derniers posts pour recalibrer le style. Passe le résultat dans le filtre anti-slop avant de le montrer.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Pour qui</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Quiconque publie régulièrement sur LinkedIn et veut garder une voix cohérente sans repartir de zéro à chaque post.</div>
+      </div>
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Prérequis</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Un fichier <code>voice.md</code> qui décrit ta voix. Sans ça, le Skill génère quelque chose de générique.</div>
+      </div>
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Utilisation</h2>
+    <div style="background: #2C2416; color: #F5F0E8; padding: 1.2rem 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.8;">
+      <div style="color: #8B7355; margin-bottom: 0.5rem;"># Depuis une idée brute</div>
+      <div>/post-linkedin "J'ai testé le Dogodoro pendant 3 semaines"</div>
+      <br/>
+      <div style="color: #8B7355; margin-bottom: 0.5rem;"># Depuis un angle dans les ressources</div>
+      <div>/post-linkedin angle:slope-vs-intercept</div>
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Ce que le Skill fait</h2>
+    <div style="display: flex; flex-direction: column; gap: 0;">
+      {["Lit voice.md en premier — non négociable", "Lit les 3 derniers posts pour recalibrer le style", "Génère l'ouverture courte et provocatrice", "Développe en blocs courts avec logique progressive", "Conclut avec ta règle terrain + question à la communauté", "Passe le tout dans le filtre anti-slop avant de montrer"].map((step, i) => (
+        <div style="display: flex; gap: 1rem; align-items: baseline; padding: 0.7rem 0; border-top: 1px solid #D4C9B5;">
+          <span style="font-size: 0.75rem; color: #8B7355; font-family: monospace; flex-shrink: 0;">{String(i+1).padStart(2,'0')}</span>
+          <span style="font-size: 0.9rem; color: #2C2416;">{step}</span>
+        </div>
+      ))}
+    </div>
+
+    <div style="margin-top: 3rem; padding: 1.5rem; background: #EDE7D9; border-radius: 12px;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 0.5rem;">⚠️ Gate de publication</div>
+      <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Le post ne peut pas être sauvegardé sans avoir passé <code>/score-linkedin</code> et obtenu 85/100 minimum.</div>
+    </div>
+
+    <div style="margin-top: 3rem; padding-bottom: 5rem;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 1rem;">Skills liés</div>
+      <div style="display: flex; gap: 1rem;">
+        <a href="/ressources/skills/score-linkedin" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">/score-linkedin →</a>
+        <a href="/ressources/skills/write" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">/write →</a>
+      </div>
+    </div>
+  </div>
+</Layout>

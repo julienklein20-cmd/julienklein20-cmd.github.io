@@ -1,0 +1,59 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="/ingest — Julien Klein">
+  <div style="max-width: 680px; margin: 0 auto; padding: 0 1.5rem;">
+    <div style="padding: 3rem 0 1rem;">
+      <a href="/ressources" style="font-size: 0.85rem; color: #8B7355;">← Ressources</a>
+    </div>
+    <div style="margin-bottom: 0.5rem;"><span style="font-family: monospace; font-size: 0.8rem; color: #5C7A4E; border: 1px solid #5C7A4E; padding: 0.2rem 0.6rem; border-radius: 999px;">Skill</span> <span style="font-family: monospace; font-size: 0.8rem; color: #8B7355; border: 1px solid #D4C9B5; padding: 0.2rem 0.6rem; border-radius: 999px;">Second Brain</span></div>
+    <h1 style="font-family: monospace; font-size: 1.8rem; margin: 0.5rem 0 1rem; color: #2C2416;">/ingest</h1>
+    <p style="font-size: 1.05rem; color: #8B7355; line-height: 1.8; margin-bottom: 2.5rem;">Ingère une ressource externe — article, newsletter, thread, livre, podcast — dans le Second Brain. Scrape le contenu, génère un résumé structuré avec les points clés, les citations importantes et les implications concrètes pour mon travail.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Pour qui</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Quiconque consomme beaucoup de contenu et veut le transformer en connaissance actionnable plutôt qu'en signets oubliés.</div>
+      </div>
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Prérequis</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Firecrawl MCP activé pour le scraping. Pour les PDFs et contenus protégés, Firecrawl est indispensable.</div>
+      </div>
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Utilisation</h2>
+    <div style="background: #2C2416; color: #F5F0E8; padding: 1.2rem 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.8;">
+      <div style="color: #8B7355; margin-bottom: 0.5rem;"># Article ou URL</div>
+      <div>/ingest https://example.com/article</div>
+      <br/>
+      <div style="color: #8B7355; margin-bottom: 0.5rem;"># Avec contexte</div>
+      <div>/ingest https://example.com "Pertinent pour campagnes Meta"</div>
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Structure de la note générée</h2>
+    <div style="display: flex; flex-direction: column; gap: 0;">
+      {[
+        "Titre, source, date, tags automatiques",
+        "Résumé en 3 phrases (idée centrale)",
+        "Points clés numérotés",
+        "Citations importantes",
+        "Implications pour mon travail",
+        "Angles LinkedIn potentiels",
+        "Liens vers notes connexes du Second Brain"
+      ].map((step, i) => (
+        <div style="display: flex; gap: 1rem; align-items: baseline; padding: 0.7rem 0; border-top: 1px solid #D4C9B5;">
+          <span style="font-size: 0.75rem; color: #8B7355; font-family: monospace; flex-shrink: 0;">{String(i+1).padStart(2,'0')}</span>
+          <span style="font-size: 0.9rem; color: #2C2416;">{step}</span>
+        </div>
+      ))}
+    </div>
+
+    <div style="margin-top: 3rem; padding-bottom: 5rem;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 1rem;">Skills liés</div>
+      <div style="display: flex; gap: 1rem;">
+        <a href="/ressources/skills/capture" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">/capture →</a>
+        <a href="/ressources/mcp/firecrawl" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">Firecrawl MCP →</a>
+      </div>
+    </div>
+  </div>
+</Layout>

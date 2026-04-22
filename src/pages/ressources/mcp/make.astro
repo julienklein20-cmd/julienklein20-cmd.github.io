@@ -1,0 +1,48 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Make MCP — Julien Klein">
+  <div style="max-width: 680px; margin: 0 auto; padding: 0 1.5rem;">
+    <div style="padding: 3rem 0 1rem;">
+      <a href="/ressources" style="font-size: 0.85rem; color: #8B7355;">← Ressources</a>
+    </div>
+    <div style="margin-bottom: 0.5rem;"><span style="font-family: monospace; font-size: 0.8rem; color: #A85C3A; border: 1px solid #A85C3A; padding: 0.2rem 0.6rem; border-radius: 999px;">MCP</span> <span style="font-family: monospace; font-size: 0.8rem; color: #8B7355; border: 1px solid #D4C9B5; padding: 0.2rem 0.6rem; border-radius: 999px;">Automatisation</span></div>
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0.5rem 0 1rem; color: #2C2416;">Make</h1>
+    <p style="font-size: 1.05rem; color: #8B7355; line-height: 1.8; margin-bottom: 2.5rem;">Déclenchement de scénarios d'automatisation Make (ex-Integromat) directement depuis Claude. Permet d'activer un workflow existant, de passer des données, et de chaîner Claude avec n'importe quelle app connectée à Make.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Cas d'usage</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Déclencher l'envoi d'un rapport, ajouter un contact dans un CRM, envoyer une notification — depuis une commande Claude.</div>
+      </div>
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Installation</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Clé API Make + webhook configuré dans le scénario cible. Le MCP Make est disponible depuis claude.ai.</div>
+      </div>
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Ce que le MCP permet</h2>
+    <div style="display: flex; flex-direction: column; gap: 0;">
+      {[
+        "Lister les scénarios disponibles dans mon compte Make",
+        "Déclencher un scénario avec des données en entrée",
+        "Lire l'historique d'exécution d'un scénario",
+        "Créer ou modifier un scénario simple depuis Claude",
+        "Chaîner Claude avec 1500+ apps via Make"
+      ].map((step, i) => (
+        <div style="display: flex; gap: 1rem; align-items: baseline; padding: 0.7rem 0; border-top: 1px solid #D4C9B5;">
+          <span style="font-size: 0.75rem; color: #8B7355; font-family: monospace; flex-shrink: 0;">{String(i+1).padStart(2,'0')}</span>
+          <span style="font-size: 0.9rem; color: #2C2416;">{step}</span>
+        </div>
+      ))}
+    </div>
+
+    <div style="margin-top: 3rem; padding-bottom: 5rem;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 1rem;">MCP liés</div>
+      <div style="display: flex; gap: 1rem;">
+        <a href="/ressources/mcp/notion" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">Notion →</a>
+        <a href="/ressources/mcp/slack" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">Slack →</a>
+      </div>
+    </div>
+  </div>
+</Layout>

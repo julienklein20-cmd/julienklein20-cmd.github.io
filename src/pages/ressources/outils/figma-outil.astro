@@ -1,0 +1,48 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Figma — Julien Klein">
+  <div style="max-width: 680px; margin: 0 auto; padding: 0 1.5rem;">
+    <div style="padding: 3rem 0 1rem;">
+      <a href="/ressources" style="font-size: 0.85rem; color: #8B7355;">← Ressources</a>
+    </div>
+    <div style="margin-bottom: 0.5rem;"><span style="font-family: monospace; font-size: 0.8rem; color: #7A5C8B; border: 1px solid #7A5C8B; padding: 0.2rem 0.6rem; border-radius: 999px;">Outil</span> <span style="font-family: monospace; font-size: 0.8rem; color: #8B7355; border: 1px solid #D4C9B5; padding: 0.2rem 0.6rem; border-radius: 999px;">Design</span></div>
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0.5rem 0 1rem; color: #2C2416;">Figma</h1>
+    <p style="font-size: 1.05rem; color: #8B7355; line-height: 1.8; margin-bottom: 2.5rem;">Design, maquettes et composants visuels. Utilisé pour les créas publicitaires Meta, les maquettes de landing pages clients, et les supports de présentation. Le MCP Figma permet à Claude de lire mes designs et d'en générer le code.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Usage principal</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Créas Meta Ads (formats statiques + vidéo), maquettes landing pages, composants de design system client.</div>
+      </div>
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Avec Claude</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Via le MCP Figma, Claude lit directement les designs et génère le code correspondant. Design-to-code sans friction.</div>
+      </div>
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Comment je l'utilise</h2>
+    <div style="display: flex; flex-direction: column; gap: 0;">
+      {[
+        "Créas Meta Ads : formats 1:1, 4:5, 9:16 en templates",
+        "Maquettes landing pages pour les clients Growth",
+        "Design system minimaliste pour les projets récurrents",
+        "Partage de fichiers avec les équipes via lien",
+        "Claude Code lit les designs via MCP pour générer le code"
+      ].map((step, i) => (
+        <div style="display: flex; gap: 1rem; align-items: baseline; padding: 0.7rem 0; border-top: 1px solid #D4C9B5;">
+          <span style="font-size: 0.75rem; color: #8B7355; font-family: monospace; flex-shrink: 0;">{String(i+1).padStart(2,'0')}</span>
+          <span style="font-size: 0.9rem; color: #2C2416;">{step}</span>
+        </div>
+      ))}
+    </div>
+
+    <div style="margin-top: 3rem; padding-bottom: 5rem;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 1rem;">MCP associé</div>
+      <div style="display: flex; gap: 1rem;">
+        <a href="/ressources/mcp/figma" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">Figma MCP →</a>
+        <a href="/ressources/outils/meta-ads" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">Meta Ads →</a>
+      </div>
+    </div>
+  </div>
+</Layout>

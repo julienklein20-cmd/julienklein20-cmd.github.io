@@ -1,0 +1,49 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Granola — Julien Klein">
+  <div style="max-width: 680px; margin: 0 auto; padding: 0 1.5rem;">
+    <div style="padding: 3rem 0 1rem;">
+      <a href="/ressources" style="font-size: 0.85rem; color: #8B7355;">← Ressources</a>
+    </div>
+    <div style="margin-bottom: 0.5rem;"><span style="font-family: monospace; font-size: 0.8rem; color: #7A5C8B; border: 1px solid #7A5C8B; padding: 0.2rem 0.6rem; border-radius: 999px;">Outil</span> <span style="font-family: monospace; font-size: 0.8rem; color: #8B7355; border: 1px solid #D4C9B5; padding: 0.2rem 0.6rem; border-radius: 999px;">Réunions</span></div>
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0.5rem 0 1rem; color: #2C2416;">Granola</h1>
+    <p style="font-size: 1.05rem; color: #8B7355; line-height: 1.8; margin-bottom: 2.5rem;">Prise de notes IA pendant les réunions. Granola transcrit la réunion en arrière-plan, je prends mes propres notes en parallèle (ou pas), et à la fin il génère un compte-rendu structuré qui combine les deux. Fini les réunions sans traces.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Pourquoi Granola</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Le TDAH rend difficile d'écouter ET de noter. Granola sépare les deux : j'écoute, il note. Je relis après.</div>
+      </div>
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Intégration</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Se connecte au calendrier. Détecte automatiquement les réunions Zoom, Meet, Teams. Pas de bot visible dans la réunion.</div>
+      </div>
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Le workflow réunion</h2>
+    <div style="display: flex; flex-direction: column; gap: 0;">
+      {[
+        "Granola détecte la réunion automatiquement depuis le calendrier",
+        "Je rejoins la réunion normalement — pas de bot ajouté",
+        "Granola transcrit en background sur mon Mac",
+        "Je prends des notes rapides si besoin dans Granola",
+        "À la fin : compte-rendu structuré avec décisions et actions",
+        "J'exporte dans Obsidian via /capture"
+      ].map((step, i) => (
+        <div style="display: flex; gap: 1rem; align-items: baseline; padding: 0.7rem 0; border-top: 1px solid #D4C9B5;">
+          <span style="font-size: 0.75rem; color: #8B7355; font-family: monospace; flex-shrink: 0;">{String(i+1).padStart(2,'0')}</span>
+          <span style="font-size: 0.9rem; color: #2C2416;">{step}</span>
+        </div>
+      ))}
+    </div>
+
+    <div style="margin-top: 3rem; padding-bottom: 5rem;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 1rem;">Outils liés</div>
+      <div style="display: flex; gap: 1rem;">
+        <a href="/ressources/outils/obsidian" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">Obsidian →</a>
+        <a href="/ressources/skills/capture" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">/capture →</a>
+      </div>
+    </div>
+  </div>
+</Layout>

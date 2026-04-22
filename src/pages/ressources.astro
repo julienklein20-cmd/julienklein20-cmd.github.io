@@ -6,28 +6,28 @@ const categories = [
     id: "skills",
     title: "Skills Claude Code",
     desc: "Mes commandes slash — workflows réutilisables.",
-    color: "var(--accent)",
+    color: "#5C7A4E",
     items: [
-      { name: "/post-linkedin", desc: "Génère un post LinkedIn dans mon style" },
-      { name: "/score-linkedin", desc: "Panel de 5 experts avant publication" },
-      { name: "/capture", desc: "Range une idée dans le bon endroit" },
-      { name: "/ingest", desc: "Ingère une ressource dans le Second Brain" },
-      { name: "/angle", desc: "Trouve des angles éditoriaux forts" },
-      { name: "/write", desc: "Mail, Slack, pitch — avec filtre anti-slop" },
+      { slug: "post-linkedin", name: "/post-linkedin", desc: "Génère un post LinkedIn dans mon style depuis une idée brute ou un angle." },
+      { slug: "score-linkedin", name: "/score-linkedin", desc: "Panel de 5 experts qui score un post avant publication. Minimum 85/100." },
+      { slug: "capture", name: "/capture", desc: "Range une idée, observation ou insight au bon endroit sans friction." },
+      { slug: "ingest", name: "/ingest", desc: "Ingère une ressource externe dans le Second Brain avec résumé structuré." },
+      { slug: "angle", name: "/angle", desc: "Trouve des angles éditoriaux forts en connectant des concepts du Garden." },
+      { slug: "write", name: "/write", desc: "Mail, Slack, pitch — génère le texte avec filtre anti-slop automatique." },
     ]
   },
   {
     id: "mcp",
     title: "Serveurs MCP",
     desc: "Les connecteurs qui relient Claude à mes outils.",
-    color: "var(--accent2)",
+    color: "#A85C3A",
     items: [
-      { name: "Firecrawl", desc: "Scraping web — Notion, articles, sites" },
-      { name: "Slack", desc: "Lire et poster dans mes channels" },
-      { name: "Figma", desc: "Accès aux designs et composants" },
-      { name: "Google Drive", desc: "Lecture et création de fichiers" },
-      { name: "Notion", desc: "Accès à mes bases de données" },
-      { name: "Make", desc: "Déclenchement de scénarios d'automatisation" },
+      { slug: "firecrawl", name: "Firecrawl", desc: "Scraping web avancé — Notion, articles, sites derrière auth." },
+      { slug: "slack", name: "Slack", desc: "Lire et poster dans mes channels directement depuis Claude." },
+      { slug: "figma", name: "Figma", desc: "Accès aux designs, composants et variables de mes fichiers." },
+      { slug: "google-drive", name: "Google Drive", desc: "Lecture et création de fichiers dans mes drives." },
+      { slug: "notion", name: "Notion", desc: "Accès en lecture/écriture à mes bases de données Notion." },
+      { slug: "make", name: "Make", desc: "Déclenchement de scénarios d'automatisation depuis Claude." },
     ]
   },
   {
@@ -36,12 +36,12 @@ const categories = [
     desc: "Les apps qui font tourner mon système.",
     color: "#7A5C8B",
     items: [
-      { name: "Obsidian", desc: "Second Brain — notes, garden, projets" },
-      { name: "VSCode", desc: "Éditeur principal avec Claude Code intégré" },
-      { name: "Wispr Flow", desc: "Dictée vocale IA — parler au lieu de taper" },
-      { name: "Granola", desc: "Prise de notes IA pendant les réunions" },
-      { name: "Figma", desc: "Design et maquettes" },
-      { name: "Meta Ads Manager", desc: "Gestion campagnes Meta" },
+      { slug: "obsidian", name: "Obsidian", desc: "Second Brain — notes, garden, projets, capture." },
+      { slug: "vscode", name: "VSCode", desc: "Éditeur principal avec Claude Code intégré." },
+      { slug: "wispr-flow", name: "Wispr Flow", desc: "Dictée vocale IA — parler au lieu de taper, partout sur le Mac." },
+      { slug: "granola", name: "Granola", desc: "Prise de notes IA pendant les réunions." },
+      { slug: "figma-outil", name: "Figma", desc: "Design, maquettes et composants visuels." },
+      { slug: "meta-ads", name: "Meta Ads Manager", desc: "Gestion et analyse des campagnes Meta." },
     ]
   },
 ];
@@ -51,30 +51,31 @@ const categories = [
   <div style="max-width: 960px; margin: 0 auto; padding: 0 1.5rem;">
 
     <section style="padding: 4rem 0 3rem;">
-      <p style="font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;">Ma boîte à outils</p>
-      <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 1rem;">Ce qui fait tourner<br/><em style="color: var(--accent2);">le système.</em></h1>
-      <p style="color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 480px;">
+      <p style="font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: #8B7355; margin-bottom: 1rem;">Ma boîte à outils</p>
+      <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 1rem; font-family: 'Playfair Display', serif; color: #2C2416;">Ce qui fait tourner<br/><em style="color: #A85C3A;">le système.</em></h1>
+      <p style="color: #8B7355; font-size: 1rem; line-height: 1.7; max-width: 480px;">
         Pas de software sans usage concret. Chaque outil ici a survécu 6 mois de test quotidien.
       </p>
     </section>
 
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; padding-bottom: 5rem;">
-      {categories.map(cat => (
-        <div>
-          <div style={`width: 32px; height: 4px; background: ${cat.color}; border-radius: 2px; margin-bottom: 1rem;`}></div>
-          <h2 style="font-size: 1rem; margin: 0 0 0.4rem; font-family: 'Playfair Display', serif;">{cat.title}</h2>
-          <p style="font-size: 0.82rem; color: var(--muted); margin: 0 0 1.5rem; line-height: 1.5;">{cat.desc}</p>
-          <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-            {cat.items.map(item => (
-              <div style="padding: 0.9rem 1rem; background: var(--card); border: 1px solid var(--border); border-radius: 8px;">
-                <div style="font-size: 0.85rem; font-weight: 500; margin-bottom: 0.2rem; font-family: monospace;">{item.name}</div>
-                <div style="font-size: 0.78rem; color: var(--muted); line-height: 1.4;">{item.desc}</div>
+    {categories.map(cat => (
+      <section style="margin-bottom: 4rem;">
+        <div style={`width: 32px; height: 4px; background: ${cat.color}; border-radius: 2px; margin-bottom: 1rem;`}></div>
+        <h2 style="font-size: 1.1rem; margin: 0 0 0.3rem; font-family: 'Playfair Display', serif; color: #2C2416;">{cat.title}</h2>
+        <p style="font-size: 0.85rem; color: #8B7355; margin: 0 0 1.5rem;">{cat.desc}</p>
+        <div style="display: flex; flex-direction: column; gap: 0;">
+          {cat.items.map((item, i) => (
+            <a href={`/ressources/${cat.id}/${item.slug}`} style={`display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-top: 1px solid #D4C9B5; ${i === cat.items.length - 1 ? 'border-bottom: 1px solid #D4C9B5;' : ''} color: #2C2416; text-decoration: none;`}>
+              <div>
+                <span style="font-size: 0.9rem; font-weight: 500; font-family: monospace; margin-right: 1rem;">{item.name}</span>
+                <span style="font-size: 0.85rem; color: #8B7355;">{item.desc}</span>
               </div>
-            ))}
-          </div>
+              <span style="color: #8B7355; flex-shrink: 0; margin-left: 1rem;">→</span>
+            </a>
+          ))}
         </div>
-      ))}
-    </div>
+      </section>
+    ))}
 
   </div>
 </Layout>

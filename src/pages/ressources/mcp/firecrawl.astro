@@ -1,0 +1,48 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Firecrawl MCP — Julien Klein">
+  <div style="max-width: 680px; margin: 0 auto; padding: 0 1.5rem;">
+    <div style="padding: 3rem 0 1rem;">
+      <a href="/ressources" style="font-size: 0.85rem; color: #8B7355;">← Ressources</a>
+    </div>
+    <div style="margin-bottom: 0.5rem;"><span style="font-family: monospace; font-size: 0.8rem; color: #A85C3A; border: 1px solid #A85C3A; padding: 0.2rem 0.6rem; border-radius: 999px;">MCP</span> <span style="font-family: monospace; font-size: 0.8rem; color: #8B7355; border: 1px solid #D4C9B5; padding: 0.2rem 0.6rem; border-radius: 999px;">Scraping</span></div>
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0.5rem 0 1rem; color: #2C2416;">Firecrawl</h1>
+    <p style="font-size: 1.05rem; color: #8B7355; line-height: 1.8; margin-bottom: 2.5rem;">Scraping web avancé directement depuis Claude. Firecrawl gère les pages JavaScript, les sites derrière authentification, Notion, et les PDFs. Utilisé dans <code>/ingest</code> pour transformer n'importe quelle URL en contenu structuré.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Cas d'usage</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Ingérer des articles, benchmarks concurrents, pages Notion partagées, rapports PDF, threads Twitter.</div>
+      </div>
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Installation</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Clé API Firecrawl requise. Ajout via <code>claude mcp add -s user</code> avec la variable <code>FIRECRAWL_API_KEY</code>.</div>
+      </div>
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Ce que Firecrawl sait faire</h2>
+    <div style="display: flex; flex-direction: column; gap: 0;">
+      {[
+        "Scraper des pages JavaScript (React, Next.js, SPAs)",
+        "Passer derrière certaines authentifications (cookies)",
+        "Extraire le texte propre d'un PDF",
+        "Crawler tout un domaine (plusieurs pages en cascade)",
+        "Retourner du Markdown structuré prêt pour le Second Brain"
+      ].map((step, i) => (
+        <div style="display: flex; gap: 1rem; align-items: baseline; padding: 0.7rem 0; border-top: 1px solid #D4C9B5;">
+          <span style="font-size: 0.75rem; color: #8B7355; font-family: monospace; flex-shrink: 0;">{String(i+1).padStart(2,'0')}</span>
+          <span style="font-size: 0.9rem; color: #2C2416;">{step}</span>
+        </div>
+      ))}
+    </div>
+
+    <div style="margin-top: 3rem; padding-bottom: 5rem;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 1rem;">Skills qui l'utilisent</div>
+      <div style="display: flex; gap: 1rem;">
+        <a href="/ressources/skills/ingest" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">/ingest →</a>
+        <a href="/ressources/skills/capture" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">/capture →</a>
+      </div>
+    </div>
+  </div>
+</Layout>

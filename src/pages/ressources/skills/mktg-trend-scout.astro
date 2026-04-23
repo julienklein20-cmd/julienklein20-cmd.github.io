@@ -1,0 +1,77 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="/mktg:trend-scout — Julien Klein">
+  <div style="max-width: 680px; margin: 0 auto; padding: 0 1.5rem;">
+    <div style="padding: 3rem 0 1rem;">
+      <a href="/ressources" style="font-size: 0.85rem; color: #8B7355;">← Ressources</a>
+    </div>
+    <div style="margin-bottom: 0.5rem;"><span style="font-family: monospace; font-size: 0.8rem; color: #5C7A4E; border: 1px solid #5C7A4E; padding: 0.2rem 0.6rem; border-radius: 999px;">Skill</span> <span style="font-family: monospace; font-size: 0.8rem; color: #8B7355; border: 1px solid #D4C9B5; padding: 0.2rem 0.6rem; border-radius: 999px;">Marketing</span></div>
+    <h1 style="font-family: monospace; font-size: 1.8rem; margin: 0.5rem 0 1rem; color: #2C2416;">/mktg:trend-scout</h1>
+    <p style="font-size: 1.05rem; color: #8B7355; line-height: 1.8; margin-bottom: 2.5rem;">Interroge HN, Reddit, Google Trends et X pour identifier ce qui monte sur un domaine précis. Score chaque tendance sur pertinence, maturité (trop tôt / peak / trop tard) et potentiel d'angle original. Propose 3-5 tendances avec un angle de contenu par tendance.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Pour qui</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Content marketers et fondateurs qui veulent publier au bon moment, pas 3 mois après tout le monde. Utile aussi pour trouver des angles de newsletter.</div>
+      </div>
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Limites</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Moins utile sur une niche peu discutée en ligne. S'il n'y a pas de signal public, le Skill ne l'invente pas.</div>
+      </div>
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Utilisation</h2>
+    <div style="background: #2C2416; color: #F5F0E8; padding: 1.2rem 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.8;">
+      <div style="color: #8B7355; margin-bottom: 0.5rem;"># Scan large</div>
+      <div>/mktg:trend-scout AI agents for product managers</div>
+      <br/>
+      <div style="color: #8B7355; margin-bottom: 0.5rem;"># Scan verticalisé</div>
+      <div>/mktg:trend-scout Meta Ads e-commerce France</div>
+      <br/>
+      <div style="color: #8B7355; margin-bottom: 0.5rem;"># Sources spécifiques</div>
+      <div>/mktg:trend-scout TDAH outils sources:hn,reddit</div>
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Ce que le Skill scanne</h2>
+    <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 2.5rem;">
+      {[
+        ["Hacker News", "Top 30 stories scorées par engagement et pertinence"],
+        ["Reddit", "Posts hot dans les subreddits pertinents au domaine"],
+        ["Google Trends", "Recherches en montée via WebSearch"],
+        ["X / Twitter", "Posts via WebSearch site:x.com + keywords et concurrents"],
+      ].map(([source, desc], i) => (
+        <div style="display: flex; gap: 1rem; padding: 0.8rem 0; border-top: 1px solid #D4C9B5;">
+          <span style="font-size: 0.75rem; color: #8B7355; font-family: monospace; flex-shrink: 0; padding-top: 0.1rem;">{String(i+1).padStart(2,'0')}</span>
+          <div>
+            <span style="font-size: 0.9rem; font-weight: 500; color: #2C2416;">{source}</span>
+            <span style="font-size: 0.85rem; color: #8B7355; margin-left: 0.5rem;">— {desc}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Résultat type</h2>
+    <div style="background: #2C2416; color: #F5F0E8; padding: 1.2rem 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.85rem; margin-bottom: 3rem; line-height: 1.8;">
+      <div style="color: #5C7A4E;">1. "Les agents = 27 appels API"</div>
+      <div style="color: #8B7355;">   Maturité : en montée (peak dans ~4 semaines)</div>
+      <div style="color: #8B7355;">   Pertinence : 9/10 — Sources : HN #38495, 3 threads X</div>
+      <div>   Angle : "Pourquoi le hype a raté que les agents</div>
+      <div>   étaient là depuis 2 ans"</div>
+      <br/>
+      <div style="color: #5C7A4E;">2. Cursor vs Claude Code</div>
+      <div style="color: #8B7355;">   Maturité : peak (n'attends pas)</div>
+      <div style="color: #8B7355;">   Pertinence : 7/10 — Sources : Lenny, r/ProductManagement</div>
+      <div>   Angle : "J'ai testé les deux 2 semaines — voici</div>
+      <div>   où chacun gagne"</div>
+    </div>
+
+    <div style="padding-bottom: 5rem;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 1rem;">Skills liés</div>
+      <div style="display: flex; gap: 1rem;">
+        <a href="/ressources/skills/angle" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">/angle →</a>
+        <a href="/ressources/skills/post-linkedin" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">/post-linkedin →</a>
+      </div>
+    </div>
+  </div>
+</Layout>

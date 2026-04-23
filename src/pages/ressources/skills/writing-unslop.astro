@@ -1,0 +1,71 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="/writing:unslop — Julien Klein">
+  <div style="max-width: 680px; margin: 0 auto; padding: 0 1.5rem;">
+    <div style="padding: 3rem 0 1rem;">
+      <a href="/ressources" style="font-size: 0.85rem; color: #8B7355;">← Ressources</a>
+    </div>
+    <div style="margin-bottom: 0.5rem;"><span style="font-family: monospace; font-size: 0.8rem; color: #5C7A4E; border: 1px solid #5C7A4E; padding: 0.2rem 0.6rem; border-radius: 999px;">Skill</span> <span style="font-family: monospace; font-size: 0.8rem; color: #8B7355; border: 1px solid #D4C9B5; padding: 0.2rem 0.6rem; border-radius: 999px;">Écriture</span></div>
+    <h1 style="font-family: monospace; font-size: 1.8rem; margin: 0.5rem 0 1rem; color: #2C2416;">/writing:unslop</h1>
+    <p style="font-size: 1.05rem; color: #8B7355; line-height: 1.8; margin-bottom: 2.5rem;">Intervient en deuxième couche : tu écris un brouillon, tu le passes dans Claude pour l'améliorer, puis tu le passes dans ce Skill pour retirer la signature IA. Préserve la structure logique et les arguments. Change uniquement la surface : tournures bannies, em-dashes, adverbes pompeux, métaphores mortes, introductions vides. Liste noire de 50+ formulations à éliminer en FR et EN.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Pour qui</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Quiconque utilise Claude comme ghostwriter et en a marre que ses textes sonnent IA. Marketers, copywriters, fondateurs qui publient beaucoup.</div>
+      </div>
+      <div style="padding: 1.2rem; background: #FAF7F2; border: 1px solid #D4C9B5; border-radius: 10px;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Prérequis</div>
+        <div style="font-size: 0.9rem; color: #2C2416; line-height: 1.6;">Claude Code installé. Inutile si tu n'écris pas avec un LLM — le slop, c'est un problème IA.</div>
+      </div>
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Utilisation</h2>
+    <div style="background: #2C2416; color: #F5F0E8; padding: 1.2rem 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.8;">
+      <div style="color: #8B7355; margin-bottom: 0.5rem;"># Sur un fichier</div>
+      <div>/writing:unslop ~/Documents/article.md FR</div>
+      <br/>
+      <div style="color: #8B7355; margin-bottom: 0.5rem;"># Sur une URL</div>
+      <div>/writing:unslop https://monblog.com/post EN</div>
+      <br/>
+      <div style="color: #8B7355; margin-bottom: 0.5rem;"># Texte collé directement</div>
+      <div>/writing:unslop "Ton texte ici..."</div>
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Ce que le Skill fait</h2>
+    <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 2.5rem;">
+      {["Détecte la langue automatiquement (FR/EN) ou accepte un argument explicite", "Supprime les phrases bannies (50+ en FR, 50+ en EN)", "Corrige les patterns structurels : em-dashes, ouvertures molles, question rhétorique", "Retire les artefacts collaboratifs IA : \"N'hésitez pas à\", \"J'espère que...\"", "Retourne un Slop Score /100 + liste des changements appliqués", "Ne touche pas aux idées, à la logique, ni à la structure argumentaire"].map((step, i) => (
+        <div style="display: flex; gap: 1rem; align-items: baseline; padding: 0.7rem 0; border-top: 1px solid #D4C9B5;">
+          <span style="font-size: 0.75rem; color: #8B7355; font-family: monospace; flex-shrink: 0;">{String(i+1).padStart(2,'0')}</span>
+          <span style="font-size: 0.9rem; color: #2C2416;">{step}</span>
+        </div>
+      ))}
+    </div>
+
+    <h2 style="font-size: 1rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2C2416;">Résultat type</h2>
+    <div style="background: #2C2416; color: #F5F0E8; padding: 1.2rem 1.5rem; border-radius: 10px; font-family: monospace; font-size: 0.85rem; margin-bottom: 2.5rem; line-height: 1.8;">
+      <div style="color: #5C7A4E;">Langue : FR — Slop Score : 61/100</div>
+      <br/>
+      <div style="color: #8B7355;">Ce qui a changé :</div>
+      <div>- "Dans un monde où" (ligne 3) → supprimé</div>
+      <div>- "Il convient de noter que" (ligne 17) → supprimé</div>
+      <div>- "Véritablement" ×2 → supprimé (adverbe pompeux)</div>
+      <div>- 7× em-dashes remplacés par virgule ou deux phrases</div>
+      <div>- 3 conclusions creuses coupées</div>
+    </div>
+
+    <div style="margin-top: 2rem; padding: 1.2rem; background: #EDE7D9; border-radius: 10px; margin-bottom: 3rem;">
+      <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8B7355; margin-bottom: 0.5rem;">Scoring</div>
+      <div style="font-size: 0.88rem; color: #2C2416; line-height: 1.7;">90-100 = texte propre, ship it · 70-89 = quelques traces IA · 50-69 = patterns évidents · 0-49 = full ChatGPT output</div>
+    </div>
+
+    <div style="padding-bottom: 5rem;">
+      <div style="font-size: 0.8rem; color: #8B7355; margin-bottom: 1rem;">Skills liés</div>
+      <div style="display: flex; gap: 1rem;">
+        <a href="/ressources/skills/post-linkedin" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">/post-linkedin →</a>
+        <a href="/ressources/skills/score-linkedin" style="font-family: monospace; font-size: 0.85rem; padding: 0.4rem 0.8rem; border: 1px solid #D4C9B5; border-radius: 6px; color: #2C2416;">/score-linkedin →</a>
+      </div>
+    </div>
+  </div>
+</Layout>

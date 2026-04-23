@@ -6,30 +6,33 @@ const cases = [
     slug: "franklin",
     client: "Franklin",
     logo: "/logo-franklin.png",
-    tag: "E-commerce",
+    tags: ["B2C", "E-commerce", "Foottech"],
     headline: "Scale paid avec la data comme colonne vertébrale",
+    excerpt: "Budget doublé en 6 mois tout en faisant baisser le CAC. Ce qui a rendu ça possible : reconstruire la mesure avant de toucher les leviers.",
     metrics: ["60K → 200K€/mois", "CAC −28%", "Server-side Meta"],
   },
   {
     slug: "les-sherpas",
     client: "Les Sherpas",
     logo: "/logo-sherpas.png",
-    tag: "EdTech",
+    tags: ["B2C", "Lead gen", "EdTech"],
     headline: "Reconstruire une stack from scratch avant de toucher les budgets",
-    metrics: ["200–250K€/mois", "GTM + Segment + Data Warehouse", "CAC en baisse"],
+    excerpt: "Arrivé sans tracking fiable, sans dashboard, sans vision funnel. Reconstruction complète de la stack data avant d'optimiser quoi que ce soit.",
+    metrics: ["200–250K€/mois", "GTM + Segment + DWH", "CAC en baisse progressive"],
   },
   {
     slug: "chance",
     client: "Chance",
-    logo: null,
-    tag: "B2C / Lead gen",
+    logo: "/logo-chance.png",
+    tags: ["B2C", "Lead gen", "PsyTech"],
     headline: "Funnel éducatif sur une catégorie où les gens ne savent pas qu'ils ont le problème",
-    metrics: ["200K€/mois", "Quiz Meta → Calendly → Sales", "Hightouch + API Conversions"],
+    excerpt: "Quiz TOFU qui éduque avant de convertir. Meta ne voyait pas les vraies conversions — on a fermé la boucle CRM → API Conversions avec Hightouch.",
+    metrics: ["200K€/mois", "Quiz → Calendly → Sales", "Hightouch + API Conversions"],
   },
 ];
 ---
 
-<Layout title="Use Cases — Julien Klein" description="Missions Growth : Franklin, Les Sherpas, Chance.">
+<Layout title="Missions — Julien Klein" description="Missions Growth : Franklin, Les Sherpas, Chance.">
   <div style="max-width: 960px; margin: 0 auto; padding: 0 1.5rem;">
 
     <section style="padding: 4rem 0 3rem; max-width: 640px;">
@@ -43,24 +46,26 @@ const cases = [
     <section style="padding-bottom: 6rem;">
       <div style="display: flex; flex-direction: column; gap: 0;">
         {cases.map((c, i) => (
-          <a href={`/usecases/${c.slug}`} style={`display: block; padding: 2rem 0; border-top: 1px solid #D4C9B5; ${i === cases.length - 1 ? 'border-bottom: 1px solid #D4C9B5;' : ''} color: #2C2416; text-decoration: none;`}>
-            <div style="display: flex; justify-content: space-between; align-items: center; gap: 2rem;">
+          <a href={`/usecases/${c.slug}`} style={`display: block; padding: 2.5rem 0; border-top: 1px solid #D4C9B5; ${i === cases.length - 1 ? 'border-bottom: 1px solid #D4C9B5;' : ''} color: #2C2416; text-decoration: none;`}>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem;">
               <div style="flex: 1;">
-                <div style="display: flex; align-items: center; gap: 1.2rem; margin-bottom: 0.8rem;">
-                  {c.logo
-                    ? <img src={c.logo} alt={c.client} style="height: 28px; width: auto; object-fit: contain;" />
-                    : <span style="font-size: 1rem; font-weight: 600; font-family: 'Playfair Display', serif;">{c.client}</span>
-                  }
-                  <span style="font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border: 1px solid #D4C9B5; border-radius: 999px; color: #8B7355;">{c.tag}</span>
+                <div style="display: flex; align-items: center; gap: 1.2rem; margin-bottom: 0.8rem; flex-wrap: wrap;">
+                  <img src={c.logo} alt={c.client} style="height: 26px; width: auto; object-fit: contain; flex-shrink: 0;" />
+                  <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                    {c.tags.map(tag => (
+                      <span style="font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.15rem 0.5rem; border: 1px solid #D4C9B5; border-radius: 999px; color: #8B7355;">{tag}</span>
+                    ))}
+                  </div>
                 </div>
-                <p style="font-size: 0.95rem; color: #8B7355; margin: 0 0 1rem; line-height: 1.6;">{c.headline}</p>
+                <p style="font-size: 1rem; font-weight: 500; color: #2C2416; margin: 0 0 0.5rem; font-family: 'Playfair Display', serif;">{c.headline}</p>
+                <p style="font-size: 0.9rem; color: #8B7355; margin: 0 0 1rem; line-height: 1.7;">{c.excerpt}</p>
                 <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
                   {c.metrics.map(m => (
                     <span style="font-size: 0.78rem; font-family: monospace; background: #EDE7D9; padding: 0.25rem 0.6rem; border-radius: 4px; color: #5C7A4E;">{m}</span>
                   ))}
                 </div>
               </div>
-              <span style="color: #8B7355; flex-shrink: 0; font-size: 1.1rem;">→</span>
+              <span style="color: #8B7355; flex-shrink: 0; font-size: 1.1rem; margin-top: 0.3rem;">→</span>
             </div>
           </a>
         ))}

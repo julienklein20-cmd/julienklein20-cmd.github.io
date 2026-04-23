@@ -19,10 +19,10 @@ const posts = [
       <p style="color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 480px;">Observations terrain sur Meta Ads, IA, TDAH et la vie de freelance. Toujours depuis une expérience réelle.</p>
     </section>
     <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2.5rem;">
-      <span class="tag">Tous</span>
-      <span class="tag meta">Meta Ads</span>
-      <span class="tag ia">IA & Authenticité</span>
-      <span class="tag perso">TDAH & Perso</span>
+      <a href="/blog" class="tag" style="cursor: pointer; text-decoration: none;">Tous</a>
+      <a href="/blog?tag=meta" class="tag meta" style="cursor: pointer; text-decoration: none;">Meta Ads</a>
+      <a href="/blog?tag=ia" class="tag ia" style="cursor: pointer; text-decoration: none;">IA & Authenticité</a>
+      <a href="/blog?tag=perso" class="tag perso" style="cursor: pointer; text-decoration: none;">TDAH & Perso</a>
     </div>
     <div>
       {posts.map((post, i) => (

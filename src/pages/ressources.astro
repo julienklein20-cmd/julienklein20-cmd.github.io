@@ -51,16 +51,22 @@ const categories = [
 <Layout title="Ressources — Julien Klein" description="Mes Skills Claude Code, serveurs MCP et outils du quotidien.">
   <div style="max-width: 960px; margin: 0 auto; padding: 0 1.5rem;">
 
-    <section style="padding: 4rem 0 3rem;">
+    <section style="padding: 4rem 0 2rem;">
       <p style="font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: #8B7355; margin-bottom: 1rem;">Ma boîte à outils</p>
       <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 1rem; font-family: 'Playfair Display', serif; color: #2C2416;">Ce qui fait tourner<br/><em style="color: #A85C3A;">le système.</em></h1>
-      <p style="color: #8B7355; font-size: 1rem; line-height: 1.7; max-width: 480px;">
+      <p style="color: #8B7355; font-size: 1rem; line-height: 1.7; max-width: 480px; margin-bottom: 2rem;">
         Pas de software sans usage concret. Chaque outil ici a survécu 6 mois de test quotidien.
       </p>
+      <!-- Ancres de navigation -->
+      <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+        <a href="#skills" style="font-size: 0.8rem; padding: 0.35rem 0.9rem; border: 1px solid #5C7A4E; border-radius: 999px; color: #5C7A4E; text-decoration: none;">Skills Claude Code</a>
+        <a href="#mcp" style="font-size: 0.8rem; padding: 0.35rem 0.9rem; border: 1px solid #A85C3A; border-radius: 999px; color: #A85C3A; text-decoration: none;">Serveurs MCP</a>
+        <a href="#outils" style="font-size: 0.8rem; padding: 0.35rem 0.9rem; border: 1px solid #7A5C8B; border-radius: 999px; color: #7A5C8B; text-decoration: none;">Outils du quotidien</a>
+      </div>
     </section>
 
     {categories.map(cat => (
-      <section style="margin-bottom: 4rem;">
+      <section id={cat.id} style="margin-bottom: 4rem; scroll-margin-top: 2rem;">
         <div style={`width: 32px; height: 4px; background: ${cat.color}; border-radius: 2px; margin-bottom: 1rem;`}></div>
         <h2 style="font-size: 1.1rem; margin: 0 0 0.3rem; font-family: 'Playfair Display', serif; color: #2C2416;">{cat.title}</h2>
         <p style="font-size: 0.85rem; color: #8B7355; margin: 0 0 1.5rem;">{cat.desc}</p>
